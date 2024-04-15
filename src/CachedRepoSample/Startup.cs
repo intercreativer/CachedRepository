@@ -43,6 +43,7 @@ namespace CachedRepoSample
 
             // Requests for ReadOnlyRepository will use the Cached Implementation
             services.AddScoped<IReadOnlyRepository<Author>, CachedAuthorRepositoryDecorator>();
+            //services.AddScoped<IReadOnlyRepository<Author>, AuthorRepository>();
             services.AddScoped(typeof(EfRepository<>));
             services.AddScoped<AuthorRepository>();
         }
